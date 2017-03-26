@@ -7,8 +7,25 @@ public class Player : Agent
 	// Use this for initialization
 	void Start ()
 	{
+	}
+	
+	// Update is called once per frame
+	void Update ()
+	{
+		if (Input.GetKeyDown ("space")) {
+			Debug.Log ("fired!");
+			ShootGun ();
+		}
+	}
+
+	void ShootGun()
+	{
 		RaycastHit hit;
-		Ray bullet = new Ray (transform.position, Vector3.up);
+
+		Debug.Log(transform.position);
+		Debug.Log (transform.forward);
+
+		Ray bullet = new Ray (transform.position, transform.forward);
 		if (Physics.Raycast (bullet, out hit, 11f)) {
 			GameObject gameObject = hit.collider.gameObject;
 			Debug.Log (gameObject);
@@ -17,11 +34,4 @@ public class Player : Agent
 		}
 		Debug.Log ("Started!");
 	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-	
-	}
 }
-
