@@ -44,9 +44,11 @@ public class Gun
 
 	public void Fire()
 	{
-		Debug.Log ("Bang.");
-		rounds--;
-		lastFired = System.DateTime.Now;
+		if (CanFire ()) {
+			Debug.Log ("Bang.");
+			rounds--;
+			lastFired = System.DateTime.Now;
+		}
 	}
 
 	public void Reload()
