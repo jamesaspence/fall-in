@@ -3,23 +3,35 @@ using System.Collections;
 
 public class Player : Agent
 {
+	private Gun gun;
 
 	// Use this for initialization
 	void Start ()
 	{
+		this.gun = new Rifle ();
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
 		if (Input.GetKeyDown ("space")) {
-			Debug.Log ("fired!");
-			ShootGun ();
+			if (gun.CanFire ()) {
+				gun.Fire ();
+			} else {
+				Debug.Log ("Can't fire.");
+				Debug.Log ("Number of rounds: " + gun.GetRounds ());
+			}
+		}
+
+		if (Input.GetKeyDown ("r")) {
+			Debug.Log ("reload button!");
+			gun.Reload ();
 		}
 	}
 
 	void ShootGun()
 	{
+		// Test code - will be removed
 		RaycastHit hit;
 
 		Debug.Log(transform.position);
