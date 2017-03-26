@@ -6,22 +6,24 @@ public class Gun
 {
 	private int magazineSize;
 	private int rateOfFire;
+	private float range;
 
 	private int rounds;
 	private bool reloading = false;
 	private Timer reloadTimer;
 	private DateTime lastFired;
 
-	public Gun(int magazineSize, int rateOfFire, int reloadSpeed)
+	public Gun(int magazineSize, int rateOfFire, int reloadSpeed, float range)
 	{
 		this.magazineSize = magazineSize;
 		this.rounds = magazineSize;
 		this.rateOfFire = rateOfFire;
+		this.range = range;
 
 		Timer reloadTimer = new Timer ();
 		reloadTimer.Interval = reloadSpeed;
 		reloadTimer.AutoReset = false;
-		reloadTimer.Elapsed += new ElapsedEventHandler (ReloadFinished);
+		reloadTimer.Elapsed += ReloadFinished;
 		this.reloadTimer = reloadTimer;
 	}
 
@@ -42,12 +44,20 @@ public class Gun
 		);
 	}
 
-	public void Fire()
+	public void Fire(Transform transform)
 	{
 		if (CanFire ()) {
 			Debug.Log ("Bang.");
 			rounds--;
 			lastFired = System.DateTime.Now;
+
+			RaycastHit hit;
+
+			Ray bullet = new Ray (transform.position, transform.forward);
+			if (Physics.Raycast (bullet, out hit, this.range)) {
+				GameObject gameObject = hit.collider.gameObject;
+				Debug.Log (gameObject);
+			}
 		}
 	}
 

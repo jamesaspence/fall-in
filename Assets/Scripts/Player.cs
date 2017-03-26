@@ -16,7 +16,7 @@ public class Player : Agent
 	{
 		if (Input.GetKeyDown ("space")) {
 			if (gun.CanFire ()) {
-				gun.Fire ();
+				gun.Fire (transform);
 			} else {
 				Debug.Log ("Can't fire.");
 				Debug.Log ("Number of rounds: " + gun.GetRounds ());
@@ -27,23 +27,5 @@ public class Player : Agent
 			Debug.Log ("reload button!");
 			gun.Reload ();
 		}
-	}
-
-	void ShootGun()
-	{
-		// Test code - will be removed
-		RaycastHit hit;
-
-		Debug.Log(transform.position);
-		Debug.Log (transform.forward);
-
-		Ray bullet = new Ray (transform.position, transform.forward);
-		if (Physics.Raycast (bullet, out hit, 11f)) {
-			GameObject gameObject = hit.collider.gameObject;
-			Debug.Log (gameObject);
-		} else {
-			Debug.Log ("No dice.");
-		}
-		Debug.Log ("Started!");
 	}
 }
