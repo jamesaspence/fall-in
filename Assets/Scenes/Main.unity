@@ -425,6 +425,34 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1579356949897528, guid: ee07376b5c4da4854a714850912d0db2, type: 2}
+      propertyPath: m_Name
+      value: Machine Gunner
+      objectReference: {fileID: 0}
+    - target: {fileID: 114340719111405284, guid: ee07376b5c4da4854a714850912d0db2,
+        type: 2}
+      propertyPath: gun
+      value: 
+      objectReference: {fileID: 1783128246}
+    m_RemovedComponents:
+    - {fileID: 114337585679468470, guid: ee07376b5c4da4854a714850912d0db2, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ee07376b5c4da4854a714850912d0db2, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1783128245 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1284208525951530, guid: ee07376b5c4da4854a714850912d0db2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1783128244}
+--- !u!114 &1783128246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1783128245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed6ffd575fff460f9c3aecf459002f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1112993929158554, guid: 86eb722f2402846269222d55db55200b,
+    type: 2}
