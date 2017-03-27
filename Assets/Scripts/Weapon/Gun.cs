@@ -37,8 +37,6 @@ public abstract class Gun: MonoBehaviour
 	public bool CanFire()
 	{
 		bool wasNotJustFired = lastFired <= System.DateTime.Now.Subtract (TimeSpan.FromMilliseconds (rateOfFire));
-		Debug.Log ("was not just fired: " + wasNotJustFired);
-		Debug.Log ("reloading: " + reloading);
 		return (
 			!reloading &&
 			rounds > 0 &&

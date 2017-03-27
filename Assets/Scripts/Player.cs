@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Player : Agent
 {
-	public Gun gun;
 	
 	// Update is called once per frame
 	void Update ()

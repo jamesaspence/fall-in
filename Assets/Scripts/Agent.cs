@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Agent : MonoBehaviour {
+	public Gun gun;
 
 	// Use this for initialization
 	void Start () {
