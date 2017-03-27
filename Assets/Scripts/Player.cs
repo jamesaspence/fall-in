@@ -8,7 +8,7 @@ public class Player : Agent
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetKeyDown ("space")) {
+		if (Input.GetKey ("space")) {
 			if (gun.CanFire ()) {
 				gun.Fire (transform);
 			} else {
