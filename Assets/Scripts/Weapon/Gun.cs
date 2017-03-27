@@ -2,8 +2,10 @@
 using System.Timers;
 using System;
 
-public class Gun
+public abstract class Gun: MonoBehaviour
 {
+	public GameObject bulletPrefab;
+	
 	private int magazineSize;
 	private int rateOfFire;
 	private float range;
@@ -58,13 +60,21 @@ public class Gun
 				GameObject gameObject = hit.collider.gameObject;
 				Debug.Log (gameObject);
 			}
+			CreateBulletPrefab ();
 		}
+	}
+
+	private void CreateBulletPrefab()
+	{
+		Vector3 start = new Vector3 (transform.position.x, transform.position.y + 1, transform.position.z);
+		Instantiate(bulletPrefab, start, bulletPrefab.transform.rotation);
 	}
 
 	public void Reload()
 	{
-		if (!reloading) {
+		if (!reloading && rounds != magazineSize) {
 			reloading = true;
+			rounds = 0;
 			reloadTimer.Start ();
 		}
 	}

@@ -3,13 +3,7 @@ using System.Collections;
 
 public class Player : Agent
 {
-	private Gun gun;
-
-	// Use this for initialization
-	void Start ()
-	{
-		this.gun = new Rifle ();
-	}
+	public Gun gun;
 	
 	// Update is called once per frame
 	void Update ()
