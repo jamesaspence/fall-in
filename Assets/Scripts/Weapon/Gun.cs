@@ -5,6 +5,7 @@ using System;
 public abstract class Gun: MonoBehaviour
 {
 	public GameObject bulletPrefab;
+	public Transform bulletSpawn;
 	
 	private int magazineSize;
 	private int rateOfFire;
@@ -53,7 +54,7 @@ public abstract class Gun: MonoBehaviour
 
 			RaycastHit hit;
 
-			Ray bullet = new Ray (transform.position, transform.forward);
+			Ray bullet = new Ray (transform.position, Vector3.forward);
 			if (Physics.Raycast (bullet, out hit, this.range)) {
 				GameObject gameObject = hit.collider.gameObject;
 				Debug.Log (gameObject);
@@ -64,8 +65,8 @@ public abstract class Gun: MonoBehaviour
 
 	private void CreateBulletPrefab()
 	{
-		Vector3 start = new Vector3 (transform.position.x, transform.position.y + 1, transform.position.z);
-		Instantiate(bulletPrefab, start, bulletPrefab.transform.rotation);
+		GameObject bullet = (GameObject) Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+		Destroy (bullet, 4f);
 	}
 
 	public void Reload()
