@@ -10,10 +10,10 @@ public abstract class Gun: MonoBehaviour
 	private int magazineSize;
 	private int rateOfFire;
 	private float range;
+	private Timer reloadTimer;
 
 	private int rounds;
 	private bool reloading = false;
-	private Timer reloadTimer;
 	private DateTime lastFired;
 
 	public Gun(int magazineSize, int rateOfFire, int reloadSpeed, float range)
