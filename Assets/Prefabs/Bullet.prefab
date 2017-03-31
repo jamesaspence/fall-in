@@ -22,8 +22,6 @@ GameObject:
   - component: {fileID: 33059807798896770}
   - component: {fileID: 136935248546843334}
   - component: {fileID: 23961169311549730}
-  - component: {fileID: 114099568608158400}
-  - component: {fileID: 54337222436781940}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -39,6 +37,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4835341728647632}
+  - component: {fileID: 114005055183258858}
+  - component: {fileID: 54774735115537160}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -111,12 +111,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1111897846431014}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54337222436781940
+--- !u!54 &54774735115537160
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1111897846431014}
+  m_GameObject: {fileID: 1392961839883200}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -126,12 +126,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114099568608158400
+--- !u!114 &114005055183258858
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1111897846431014}
+  m_GameObject: {fileID: 1392961839883200}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d65594cba296a41719239c0044660bc8, type: 3}
